@@ -26,7 +26,6 @@ namespace HaloSite
         {
 	        services.AddTransient<IHaloService, HaloService>();
 	        var httpClient = new HttpClient {BaseAddress = new Uri("https://www.haloapi.com/")};
-			var test = Configuration["haloApiToken"];
             httpClient.DefaultRequestHeaders.Add(ApiTokenHeader, Configuration["haloApiToken"]);
 			services.AddSingleton<IHaloHttpClient, HaloHttpClient>(provider => new HaloHttpClient(httpClient));
 	        services.AddMvc();
