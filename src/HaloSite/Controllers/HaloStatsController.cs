@@ -43,18 +43,12 @@ namespace HaloSite.Controllers
 
 	    // GET: api/values
         [HttpGet]
-        public async Task<RootObject> GetAsync()
+        public async Task<RootObject> GetAsync(string players)
         {
-	        return await _haloService.GetArenaStatsAsync("skateingdevil76");
+	        return await _haloService.GetArenaStatsAsync(players);
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return "value";
-        }
-
+        
         // POST api/values
         [HttpPost]
         public void Post([FromBody]string value)
