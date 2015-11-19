@@ -3,9 +3,9 @@ using System.Net.Http;
 using HaloSite.Controllers;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
-using Microsoft.Dnx.Runtime;
-using Microsoft.Framework.DependencyInjection;
-using Microsoft.Framework.Configuration;
+using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace HaloSite
 {
@@ -28,7 +28,7 @@ namespace HaloSite
 	        var httpClient = new HttpClient {BaseAddress = new Uri("https://www.haloapi.com/")};
             httpClient.DefaultRequestHeaders.Add(ApiTokenHeader, Configuration["haloApiToken"]);
 			services.AddSingleton<IHaloHttpClient, HaloHttpClient>(provider => new HaloHttpClient(httpClient));
-	        services.AddMvc();
+			services.AddMvc();
         }
 
 	    private const string ApiTokenHeader = "Ocp-Apim-Subscription-Key";
