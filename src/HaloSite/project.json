@@ -5,7 +5,7 @@
 
 	"scripts": {
 		"postrestore": "gulp copyMainFiles",
-		"prepublish": [ "npm install", "bower install" ]
+		"prepublish": [ "npm install", "bower install", "tsd install" ]
 	},
 
 	"dependencies": {
