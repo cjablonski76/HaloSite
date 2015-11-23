@@ -21,6 +21,7 @@ build/
 bld/
 [Bb]in/
 [Oo]bj/
+**/wwwroot/App/
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -171,6 +172,7 @@ ClientBin/
 *.publishsettings
 node_modules/
 bower_components/
+**/*.d.ts
 orleans.codegen.cs
 
 # RIA/Silverlight projects

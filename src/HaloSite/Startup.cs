@@ -11,6 +11,8 @@ namespace HaloSite
 {
     public class Startup
     {
+	    public static void Main(string[] args) => WebApplication.Run<Startup>(args);
+
 		public IConfiguration Configuration { get; set; }
 
 		public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
@@ -34,7 +36,8 @@ namespace HaloSite
 	    private const string ApiTokenHeader = "Ocp-Apim-Subscription-Key";
 
 	    public void Configure(IApplicationBuilder app)
-        {
+	    {
+		    app.UseStaticFiles();
 	        app.UseMvc();
         }
     }
